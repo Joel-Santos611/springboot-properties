@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+
+
 @SpringBootApplication
 public class SpringbootPropertiesApplication extends SpringBootServletInitializer{
 
@@ -13,9 +15,8 @@ public class SpringbootPropertiesApplication extends SpringBootServletInitialize
 	}
 
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		// TODO Auto-generated method stub
-		return super.configure(builder);
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(SpringbootPropertiesApplication.class);
 	}
 
 
