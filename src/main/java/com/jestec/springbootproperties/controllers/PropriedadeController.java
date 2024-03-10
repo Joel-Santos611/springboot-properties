@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api")
 public class PropriedadeController {
 
     @Autowired
     private PropriedadeRepository propriedadeRepository;
 
-    @RequestMapping(value = "find/{filtro}", method=RequestMethod.GET)
+    @RequestMapping(value = "/find/{filtro}", method=RequestMethod.GET)
     List<Propriedade> findByFiltro(@PathVariable("filtro") String filtro){
         return propriedadeRepository.findByFiltro(filtro);
     }
