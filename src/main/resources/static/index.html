@@ -9,36 +9,35 @@
 
 <h1>O locoooo</h1>
 
-    <script>
-function propertiesService(filter) {
-    $.ajax({
-        type:"GET",
-        url: "/api/find"+filter,
-        data:'$format=json',
-        dataType:'json',
-        success : function(data){
-            var total=0;
-            $.each(data,function(d,results){
-                $("#propTable tbody").append(
-                    "<tr>"
-                        +"<td class=\text-nowrap\">"
-                            +results.categoria
-                          +"</td>"  +"<td class=\text-nowrap\">"
-                                +result.subcategoria
-                                +"</td>"+"<td class=\text-nowrap\">"
-                                    +results.nome
-                                    +"</td>"+"<td class=\text-nowrap\">"
-                                        +results.valor
-                                        +"</td>"+"<td class=\text-nowrap\">"
-                                            +results.descricao
-                                            +"</td">
-                                                +"</tr>")
-                                            total++;
-            })
-            $("#results").text(total+"found")
-        }
-    });
-};
+<script>
+    function propertiesService(filter) {
+        $.ajax({
+            type: "GET",
+            url: "/api/find" + filter,
+            dataType: 'json',
+            success: function(data) {
+                var total = 0;
+                $.each(data, function(index, result) {
+                    $("#propTable tbody").append(
+                        "<tr>" +
+                        "<td class=\"text-nowrap\">" + result.categoria + "</td>" +
+                        "<td class=\"text-nowrap\">" + result.subcategoria + "</td>" +
+                        "<td class=\"text-nowrap\">" + result.nome + "</td>" +
+                        "<td class=\"text-nowrap\">" + result.valor + "</td>" +
+                        "<td class=\"text-nowrap\">" + result.descricao + "</td>" +
+                        "</tr>"
+                    );
+                    total++;
+                });
+                $("#results").text(total + " found");
+            },
+            error: function(xhr, status, error) {
+                console.error("Erro na requisição AJAX:", error);
+            }
+        });
+    };
+    </script>
+    
 
     </script>
 </body>
