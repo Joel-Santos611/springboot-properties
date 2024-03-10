@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties Spring boot</title>
+</head>
+<body>
+
+<h1>O locoooo</h1>
+
+    <script>
+function propertiesService(filter) {
+    $.ajax({
+        type:"GET",
+        url: "/api/find"+filter,
+        data:'$format=json',
+        dataType:'json',
+        success : function(data){
+            var total=0;
+            $.each(data,function(d,results){
+                $("#propTable tbody").append(
+                    "<tr>"
+                        +"<td class=\text-nowrap\">"
+                            +results.categoria
+                          +"</td>"  +"<td class=\text-nowrap\">"
+                                +result.subcategoria
+                                +"</td>"+"<td class=\text-nowrap\">"
+                                    +results.nome
+                                    +"</td>"+"<td class=\text-nowrap\">"
+                                        +results.valor
+                                        +"</td>"+"<td class=\text-nowrap\">"
+                                            +results.descricao
+                                            +"</td">
+                                                +"</tr>")
+                                            total++;
+            })
+            $("#results").text(total+"found")
+        }
+    });
+};
+
+    </script>
+</body>
+</html>
